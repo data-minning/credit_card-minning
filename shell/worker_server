@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# -------------------------------------------------------
+# A shell script that use to run the Data handler server
+# Written by     : Evarist Fangnikoue
+# Email          : malevae@gmail.com
+# Last updated on: 2018/20/08
+# -------------------------------------------------------
+
+EXIT_STATUS=0
+
+#Checking the environment variable
+global_script()
+{
+    ./global_script all
+     EXIT_STATUS=$?
+}
+
+#run the emitter python file
+run_script()
+{
+
+    if !([ -z $PYSPARK_DRIVER_PYTHON ]); then
+        
+        unset PYSPARK_DRIVER_PYTHON
+    
+    fi  
+    
+
+    if [ $EXIT_STATUS -eq 0 ]; then
+        spark-submit --jars ${HSBC_MINNING_HOME}/jar/mysql-connector-java-5.1.38.jar --master local[8] ${HSBC_MINNING_HOME}/worker/start_worker_server.py      
+   else
+       exit
+   fi
+   
+}
+
+
+#The startup script 
+main()
+{
+
+    global_script
+    
+    run_script
+    
+    exit 0
+}
+
+main
+
+
+

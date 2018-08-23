@@ -1,0 +1,141 @@
+#!/bin/sh
+# -------------------------------------------------------
+# A shell script that use to run the Data handler server
+# Written by     : Evarist Fangnikoue
+# Email          : malevae@gmail.com
+# Last updated on: 2018/20/08
+# -------------------------------------------------------
+
+#Checking the environment variable
+pre_start()
+{
+
+    if [ ${#HSBC_MINNING_HOME} -eq 0 ]; then
+        usage error home
+        
+
+    elif [ ${#SPARK_HOME} -eq 0 ]; then
+        usage error spark_home
+        
+    elif [ ${#PYTHON} -eq 0 ]; then
+        usage error python_script
+        
+    fi
+}
+
+#set all the environment variables
+set_env()
+{
+    
+    if [ ${#HSBC_MINNING_DIR} -eq 0 ]; then
+    
+        if [ -e ${HOME}/".bashrc" ]; then
+        
+           echo "export HSBC_MINNING_DIR='$HSBC_MINNING_HOME/examples/minning/'" >> ${HOME}/".bashrc"
+            
+        fi
+        
+    fi
+}
+
+check_file_by_name()
+{
+
+    if [ -e $1 ];then
+        exit 0
+    else
+        exit 1
+    fi
+}
+
+
+#display a help message either warnning,info or error
+usage()
+{
+
+    if [ $1=="error" ]; then
+    
+        printf "[ERROR]: "
+        case $2 in
+
+            "home")
+                echo "The envrironment variable HSBC_MINNING_HOME is unset, please set it"
+             ;;
+
+		    "spark_home")
+
+                echo "Either the environment variable SPARK_HOME is not set or spark is not install on your system"
+			;;
+
+		    "minning_dir")
+
+                echo "The environment variable HSBC_MINNING_DIR is unset."
+			;;
+            
+            "python_script")
+
+                echo "Please set the environment variable PYTHON , to point to your python executable script"
+			;;
+            
+            "no_file")
+
+                if [ -z $4 ]; then
+                    echo "The file $3 does not exist"
+                    
+                else
+                    echo $4
+                fi
+            ;;
+            
+            
+		esac
+
+        exit 1
+    fi
+		
+		
+}
+
+#The startup script 
+main()
+{
+
+argument=$1
+
+shift 1
+
+case $argument in 
+
+    "all")
+
+        pre_start
+    
+        set_env
+    
+    ;;
+    
+    "check_file")
+    
+        check_file_by_name $@
+    
+    ;;
+    
+    "check_env")
+    
+        check_env $@
+    
+    ;;
+    
+    "usage")
+        
+        usage $@
+    
+    ;;
+    
+    esac
+    
+    exit 0
+
+}
+
+main $@

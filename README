@@ -1,0 +1,63 @@
+
+#The test case perform with this application is based on the below hadware used
+
+
+1-Server Hardisk
+
+    Filesystem      Size  Used Avail Use% Mounted on
+    udev            5.9G     0  5.9G   0% /dev
+    tmpfs           1.2G  2.2M  1.2G   1% /run
+    /dev/sda1       106G   15G   86G  15% /
+
+
+2-Server name infoormation
+
+    Linux ubuntu 4.15.0-20-generic #21-Ubuntu SMP Tue Apr 24 06:16:15 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+    
+3- Server Memory
+                  total        used        free      shared  buff/cache   available
+    Mem:            11G        8.6G        964M         14M        1.5G        2.4G
+    Swap:          2.0G        292M        1.7G
+
+
+
+
+4- Module Installed:
+
+    1-pyspark
+
+    2-uuid
+
+    3-logging
+
+    4-http
+
+    5-cgi
+
+    6-lxml
+
+    7-urllib.parse
+
+    8-decimal
+
+    9-findspark
+
+
+5-Procedure to start the Assignment
+
+    In the shell folder do the following:
+
+    1- Start the data_server
+        ./data_server
+
+    2- Start the emitter
+        ./emitter
+
+    3- Start the worker_server
+
+        ./worker_server
+
+    4- Start the web_server
+        ./web_server
+
+

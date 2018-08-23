@@ -1,0 +1,17 @@
+1- File data_server
+   This file is a shell script file that is use to start the Data handler server.
+   
+   
+2- File worker_server
+   This file is a shell script file that is use to start the Worker server.
+   
+3- File emitter
+   This file is a shell script file that is use to start the fake credit card holder transaction
+   
+   
+4- File web_server
+   This file is a shell script file that is use to represent a simple web server that will recieve a GET request and send the respond
+   
+5- Folder tester
+   This foldercontains some of the shell script to use against the system
+   

@@ -1,0 +1,11 @@
+1- Folder data:
+   This folder contains the file 'account_holder.json' which represent the data used by the fake emitter to send the transaction to the 
+   Data Handler server, it can be extend please , feel free to modify it.
+   
+   
+2- Folder minning
+    This folder represent a temporary folder location where all the transactions will be saved.Nothing to do here
+
+  
+
+

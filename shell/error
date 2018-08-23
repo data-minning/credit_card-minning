@@ -1,0 +1,10 @@
+from: can't read /var/mail/modules.e_sock
+from: can't read /var/mail/modules.e_object
+from: can't read /var/mail/modules.e_file
+from: can't read /var/mail/modules.e_array
+import-im6.q16: unable to open X server `' @ error/import.c/ImportImageCommand/358.
+import-im6.q16: unable to open X server `' @ error/import.c/ImportImageCommand/358.
+import-im6.q16: unable to open X server `' @ error/import.c/ImportImageCommand/358.
+import-im6.q16: unable to open X server `' @ error/import.c/ImportImageCommand/358.
+/home/spark/tmp/spark/hsbc//emitter/emitter.py: 11: /home/spark/tmp/spark/hsbc//emitter/emitter.py: class: not found
+/home/spark/tmp/spark/hsbc//emitter/emitter.py: 13: /home/spark/tmp/spark/hsbc//emitter/emitter.py: Syntax error: "(" unexpected

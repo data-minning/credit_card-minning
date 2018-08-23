@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# -------------------------------------------------------
+# A shell script that use to run the Data handler server
+# Written by     : Evarist Fangnikoue
+# Email          : malevae@gmail.com
+# Last updated on: 2018/20/08
+# -------------------------------------------------------
+
+EXIT_STATUS=0
+
+#Checking the environment variable
+global_script()
+{
+    ./global_script all
+    EXIT_STATUS=$?
+}
+
+#run the emitter python file
+run_script()
+{
+
+    if [ $EXIT_STATUS -eq 0 ]; then
+    
+        if [ -z $PYTHON ]; then
+    
+           sudo exec "${HSBC_MINNING_HOME}/web/web_server.py" $@
+        
+        else
+            sudo $PYTHON "${HSBC_MINNING_HOME}/web/web_server.py" $@
+        fi
+        
+   else
+       exit
+   fi
+}
+
+
+#The startup script 
+main()
+{
+
+    global_script
+    
+    run_script
+    
+    exit 0
+}
+
+main

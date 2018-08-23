@@ -1,0 +1,10 @@
+1- File shell_api.py
+    Use to test the transaction implementation using the command line interface reather than the http request.
+    To do so just change the trans_info variable information to the desire request, remember that the action can only recieve the following
+    value: 
+        1- trans
+            To view all the trnsaction by the given username parameter and the time interval given using the 'time_inter' parameter
+        
+        2- sum
+            To get all total amount of transaction perform by the given username parameter and the time interval given using the 'time_inter'
+            parameter

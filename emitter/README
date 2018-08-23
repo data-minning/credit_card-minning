@@ -1,0 +1,5 @@
+1- File emitter.py
+     This file is use to simulate the actual credit card holder transaction.Before running this file make sure the file called 
+     'account_holder.json' exists in the example/data folder.In the 'account_holder.json' each send_name represent the credit
+     card holder name, so when you run this file it will use all the send_name set in this file and generate a fake reciever bank account
+     number with a random transaction amount.In the default setup each sender/client can make one transaction every 2 seconds

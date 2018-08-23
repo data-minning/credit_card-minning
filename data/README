@@ -1,0 +1,6 @@
+1- File data_handler.py
+   This file represents Data handler server source code file that is use to recieve the transaction data from the emitter.Nothing to do here.
+   
+2- File start_data_server.py
+   This file is the main file that is used to start the Data handler server.
+   
